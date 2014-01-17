@@ -15,6 +15,9 @@ This file can also be run as a script to install or upgrade setuptools.
 """
 from __future__ import print_function
 from __future__ import unicode_literals
+from __future__ import division
+from __future__ import absolute_import
+from future import standard_library
 from future.builtins import open
 import sys
 DEFAULT_VERSION = "0.6c11"
