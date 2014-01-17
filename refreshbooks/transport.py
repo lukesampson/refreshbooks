@@ -41,10 +41,10 @@ class TokenAuthorization(object):
     """
     def __init__(self, token):
         # See RFC 2617.
-        base64_user_pass = base64.b64encode("%s:" % (token, ))
+        base64_user_pass = base64.b64encode('{}:'.format(token).encode('ascii'))
         
         self.headers = {
-            'Authorization': 'Basic %s' % (base64_user_pass, )
+            'Authorization': 'Basic {}'.format(base64_user_pass.decode())
         }
     
     def __call__(self):
