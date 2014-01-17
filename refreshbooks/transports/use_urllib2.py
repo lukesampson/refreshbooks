@@ -3,7 +3,10 @@ from __future__ import print_function
 from __future__ import division
 from __future__ import absolute_import
 from future import standard_library
-import urllib.request as u
+try:
+    import urllib.request as u
+except ImportError:
+    import urllib2 as u
 
 from refreshbooks import exceptions as exc
 
