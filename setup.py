@@ -44,6 +44,7 @@ setup(
     ],
     install_requires=[
         'lxml',
+        'future'
     ],
     extras_require={
         'oauth': ['oauth'],
