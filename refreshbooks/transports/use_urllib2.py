@@ -15,5 +15,5 @@ class Transport(object):
         )
         try:
             return u.urlopen(request).read()
-        except u.HTTPError, e:
+        except u.HTTPError as e:
             raise exc.TransportException(e.code, e.read())

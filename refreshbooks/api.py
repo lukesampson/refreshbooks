@@ -1,3 +1,4 @@
+from __future__ import print_function
 import decimal
 import sys
 import functools
@@ -49,14 +50,14 @@ def default_response_decoder(*args, **kwargs):
 def logging_request_encoder(method, **params):
     encoded = default_request_encoder(method, **params)
     
-    print >>sys.stderr, "--- Request (%r, %r) ---" % (method, params)
-    print >>sys.stderr, encoded
+    print("--- Request (%r, %r) ---" % (method, params), file=sys.stderr)
+    print(encoded, file=sys.stderr)
     
     return encoded
 
 def logging_response_decoder(response):
-    print >>sys.stderr, "--- Response ---"
-    print >>sys.stderr, response
+    print("--- Response ---", file=sys.stderr)
+    print(response, file=sys.stderr)
     
     return default_response_decoder(response)
 
