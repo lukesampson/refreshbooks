@@ -1,5 +1,5 @@
 from __future__ import unicode_literals
-import urllib2 as u
+import urllib.request as u
 
 from refreshbooks import exceptions as exc
 

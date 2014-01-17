@@ -4,8 +4,9 @@ from refreshbooks import elements
 
 def test_field():
     field_element = elements.field("example", "A Test Value Here")
+    print(etree.tostring(field_element))
     
-    assert "<example>A Test Value Here</example>" == etree.tostring(
+    assert b"<example>A Test Value Here</example>" == etree.tostring(
         field_element
     )
 

@@ -9,12 +9,12 @@ from refreshbooks.exceptions import TransportException
 @raises(TransportException)
 def test_urllib2_transport_exception():
     from refreshbooks.transports.use_urllib2 import Transport
-    Transport('http://httpstat.us/400', dict)("foo")
+    Transport('http://httpstat.us/400', dict)(b"foo")
 
 @attr('integration')
 def test_urllib2():
     from refreshbooks.transports.use_urllib2 import Transport
-    assert len(Transport('http://httpstat.us/200', dict)("foo")) > 0
+    assert len(Transport('http://httpstat.us/200', dict)(b"foo")) > 0
 
 @attr('integration')
 @raises(TransportException)
