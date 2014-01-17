@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 class RemoteMethod(object):
     """Ties python method calls into FreshBooks API calls.
     

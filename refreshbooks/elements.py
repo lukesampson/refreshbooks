@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from lxml import etree
 
 def field(name, value):

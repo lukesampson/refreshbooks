@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 from mock import patch, Mock, sentinel
 from nose.tools import raises
 from nose.plugins.attrib import attr

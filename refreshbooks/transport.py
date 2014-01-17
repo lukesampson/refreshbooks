@@ -1,5 +1,7 @@
+from __future__ import unicode_literals
+from future import standard_library
 import base64
-import httplib
+import http.client
 
 from refreshbooks import exceptions
 

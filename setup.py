@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 try:
     from setuptools import setup, find_packages
 except ImportError:
@@ -5,6 +6,7 @@ except ImportError:
     use_setuptools()
     from setuptools import setup, find_packages
 
+from future.builtins import open
 setup(
     name='refreshbooks',
     version='1.7.3.dev',

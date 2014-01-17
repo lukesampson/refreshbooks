@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 import httplib2
 
 from refreshbooks import exceptions as exc

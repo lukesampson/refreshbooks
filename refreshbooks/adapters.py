@@ -1,3 +1,5 @@
+from __future__ import unicode_literals
+from future.builtins import str
 from lxml import etree, objectify
 import decimal
 
@@ -37,7 +39,7 @@ def encode_as_simple(name, value):
         True
     """
     if isinstance(value, objectify.ObjectifiedDataElement):
-        return encode_as_simple(name, unicode(value))
+        return encode_as_simple(name, str(value))
     if type(value) in _stringable_types:
         value = str(value)
     return elements.field(name, value)
@@ -46,7 +48,7 @@ def encode_as_dict(_name, **kwargs):
     # To make collisions between the first positional parameter and the 
     # keyword parameters unlikely, that's why.
     return elements.type(_name, [
-        encode_parameter(name, value) for (name, value) in kwargs.iteritems()
+        encode_parameter(name, value) for (name, value) in kwargs.items()
     ])
 
 def encode_as_list_of_dicts(name, *args):
@@ -85,7 +87,7 @@ def xml_request(method, **params):
         method,
         [
             encode_parameter(name, value)
-            for (name, value) in params.iteritems()
+            for (name, value) in params.items()
         ]
     )
     

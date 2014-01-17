@@ -1,3 +1,4 @@
+from __future__ import unicode_literals
 class TransportException(Exception):
     def __init__(self, status, content):
         self.status = status
